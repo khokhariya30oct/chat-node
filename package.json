@@ -1,0 +1,22 @@
+{
+  "name": "chat-node",
+  "version": "1.0.0",
+  "description": "A socket IO based Node application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khokhariya30oct/chat-node.git"
+  },
+  "author": "Ashish Khokhariya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/khokhariya30oct/chat-node/issues"
+  },
+  "homepage": "https://github.com/khokhariya30oct/chat-node#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
