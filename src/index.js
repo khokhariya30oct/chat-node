@@ -9,14 +9,23 @@ const server = http.createServer(app)
 const io = socketio(server)
 
 // for socketIO connection event
-let count = 0
+
 io.on('connection', (socket) => {
-  console.log('New socket connection ')
-  socket.emit('countUpdated',count)
-  
-  socket.on('increment',() => {
-    io.emit('countUpdated',++count)
+  socket.emit('greeting', 'Welcome')
+
+  // Broadcast except current socket
+  socket.broadcast.emit('greeting', 'A new user is joined!!!')
+
+  // Getting request from client
+  socket.on('sendMessage', (message) => {
+    io.emit('greeting', `Welcome ${message}`)
   })
+
+  // built-in request
+  socket.on('disconnect', () => {
+    io.emit('greeting', `User is left`)
+  })
+
 })
 
 
